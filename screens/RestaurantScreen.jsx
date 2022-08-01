@@ -25,9 +25,9 @@ const RestaurantScreen = () => {
         <>
         <BasketIcon />
         <ScrollView style={tw`relative`}>
-        <View style={[tw`h-full w-full bg-white flex-1 relative `]}>    
+        <View style={[tw`h-full w-full bg-white flex-1 relative pt-5 `]}>    
            <Image source={image} style={[tw`w-full h-56`]} />
-           <TouchableOpacity onPress={navigation.goBack} style={[tw`absolute top-5 left-5 bg-white rounded-full`]}>
+           <TouchableOpacity onPress={navigation.goBack} style={[tw`absolute top-6 left-5 bg-white rounded-full`]}>
            <ArrowLeftIcon style={tw`p-2`} size={40} color="#00bbcc" />
            </TouchableOpacity>
             <View style={tw`bg-white`}>

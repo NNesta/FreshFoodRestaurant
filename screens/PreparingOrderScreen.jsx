@@ -2,7 +2,6 @@ import { View, Text, SafeAreaView } from 'react-native'
 import React, { useEffect } from 'react'
 import tw from 'twrnc';
 import * as Progress from "react-native-progress";
-import { NavigationType } from 'react-router-dom';
 import { useNavigation } from '@react-navigation/native';
 
 const PreparingOrderScreen = () => {

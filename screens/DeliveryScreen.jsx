@@ -6,14 +6,14 @@ import { XIcon } from 'react-native-heroicons/solid'
 import { useNavigation } from '@react-navigation/native'
 import { selectRestaurant } from '../features/restaurantSlice'
 import { useSelector } from 'react-redux'; 
-// import MapView,{Marker} from 'react-native-maps'
+import MapView,{Marker} from 'react-native-maps'
 
 const DeliveryScreen = () => {
     const navigation = useNavigation()
     const restaurant = useSelector(selectRestaurant)
   return (
-    <View style={tw`flex-1 bg-[#00CCBB]`}>
-          <SafeAreaView style={tw`z-50`}>
+    <View style={tw`flex-1 pt-5`}>
+          <SafeAreaView style={tw`bg-[#00CCBB] z-50`}>
               <View style={tw`flex-row justify-between items-center p-5`}>
                   <TouchableOpacity onPress={()=>navigation.navigate("Home")}>
                       <XIcon color="white" size={30} />
@@ -32,19 +32,19 @@ const DeliveryScreen = () => {
                   <Text style={tw`mt-3 text-gray-500`}>Your order at {restaurant.title} is being prepared</Text>
               </View>
           </SafeAreaView>
-         {/*  <MapView
+           <MapView
               style={tw`flex-1 -mt-10 z-0`}
               mapType='mutedStandard'
               initialRegion={{
-                  latitude: 4364,
-                  longitude: 723,
+                  latitude: -1.956216,
+                  longitude: 30.028601,
                   latitudeDelta: 0.005,
                   longitudeDelta: 0.005
               }}>
               <Marker
                   coordinate={{
-                      latitude: 4364,
-                      longitude: 723,
+                      latitude: -1.956216,
+                      longitude: 30.028601,
                   }}
                   title={restaurant.title}
                   description={restaurant.description}
@@ -52,7 +52,7 @@ const DeliveryScreen = () => {
                   pinColor="#00CCBB"
               />
           
-          </MapView> */}
+          </MapView> 
           <SafeAreaView style={[tw`bg-white flex-row items-center h-28`, {gap: 5}]}>
               <Image source={require("../assets/food4.jpg")} style={tw`h-12 w-12 bg-gray-300 p-4 rounded-full ml-5`} />
               <View style={tw`flex-1`}>

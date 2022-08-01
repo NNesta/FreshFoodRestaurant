@@ -26,7 +26,7 @@ const BasketScreen = () => {
         setBasketItems(Object.entries(groupedItems))
     }, [items]);
   return (
-      <SafeAreaView style={tw`flex-1 bg-white`}>
+      <SafeAreaView style={tw`flex-1 bg-white pt-6`}>
           <View  style={tw`flex-1 bg-gray-100`}>
               <View style={tw`p-5 border-b border-[#00CCBB] bg-white shadow-xl`}>
                   <View>
@@ -41,7 +41,7 @@ const BasketScreen = () => {
                    
                   </TouchableOpacity>
               </View>
-              <View style={tw`flex-row items-center space-x-4 px-4 py-3 bg-white my-5`}>
+              <View style={tw`flex-row items-center px-4 py-3 bg-white my-5`}>
                   <Image
                       source={require("../assets/food1.jpg")}
                       style={tw`h-10 w-10 p-4 mr-4 rounded-full bg-gray-300`}
@@ -56,17 +56,17 @@ const BasketScreen = () => {
                       <View key={key} style={tw`flex-row items-center py-2 px-5 bg-white`}>
                       <View style={[tw`flex-row flex-1 items-center`, {gap:10}]}>
                           
-                          <Text>{items.length} x</Text>
+                          <Text>{items.length} x  </Text>
                           <Image
                               style={tw`h-12 w-12 rounded-full`}
                           source={items[0].image}
                           />
-                              <Text>{items[0]?.name}</Text>
+                              <Text> {items[0]?.name}</Text>
                           </View>
                           <View style={[tw`flex-row items-center`, { gap: 10 }]}>
                               <Text style={tw`text-gray-600`}><Currency quantity={items[0].price} currency="GBP" /></Text>
                               
-                              <TouchableOpacity><Text onPress={()=> dispatch(removeItemFromBasket({id: key}))} style={tw`text-[#00CCBB]`}>Remove</Text></TouchableOpacity>
+                              <TouchableOpacity><Text onPress={()=> dispatch(removeItemFromBasket({id: key}))} style={tw`text-[#00CCBB]`}>  Remove</Text></TouchableOpacity>
                               
                           </View>
                       </View>

@@ -6,15 +6,15 @@ import CategoryCard from "./CategoryCard";
 
 const Category = () => {
   return (
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={tw`px-2 flex-row space-x-2 pt-2 gap-2`}  >
-         <CategoryCard title="Humberger" image="../assets/food1.jpg" /> 
-         <CategoryCard title="Humberger" image="../assets/food2.jpg" /> 
-         <CategoryCard title="Humberger" image="../assets/food3.jpg" /> 
-         <CategoryCard title="Humberger" image="../assets/food4.jpg" /> 
-         <CategoryCard title="Humberger" image="../assets/food5.jpg" /> 
-         <CategoryCard title="Humberger" image="../assets/food6.jpg" /> 
-         <CategoryCard title="Humberger" image="../assets/food7.jpg" /> 
-         <CategoryCard title="Humberger" image="../assets/food8.jpg" /> 
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={tw`px-2 flex-row pt-2`}  >
+         <CategoryCard title="Pizza" image={require("../assets/food8.jpg")} /> 
+         <CategoryCard title="Hot Dogs" image={require("../assets/food7.jpg")} /> 
+         <CategoryCard title="Humberger" image={require("../assets/food6.jpg")} /> 
+         <CategoryCard title="Humberger" image={require("../assets/food5.jpg")} /> 
+         <CategoryCard title="Humberger" image={require("../assets/food4.jpg")} /> 
+         <CategoryCard title="Humberger" image={require("../assets/food3.jpg")} /> 
+         <CategoryCard title="Humberger" image={require("../assets/food2.jpg")} /> 
+         <CategoryCard title="Humberger" image={require("../assets/food1.jpg")} /> 
  
     </ScrollView>
   )

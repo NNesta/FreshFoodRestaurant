@@ -14,7 +14,7 @@ const RestaurantCard = ({image, title, rating, genre, address, description, dish
   return (
       <TouchableOpacity
          onPress={handlePressRestaurant}
-          style={[tw`shadow-lg py-2`, { gap: 4 }]}>
+          style={[tw`shadow-lg py-2 px-2`, { gap: 4 }]}>
           <Image style={tw`w-64 h-32 rounded`} source={image} />
           <View style={[tw`px-4`]}>
               <Text style={[tw`text-xl font-bold text-black pl-2`]}>{ title }</Text>

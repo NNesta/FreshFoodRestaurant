@@ -20,7 +20,7 @@ const DishRow = ({id, name, description, image, price }) => {
           <View style={tw`flex-1 pr-2`}>
               <Text style={tw`text-lg mb-1`}>{ name }</Text>
               <Text style={tw`text-gray-400`}>{description}</Text>
-              <Currency quantity={price} currency="RWF" />
+              <Text><Currency quantity={price} currency="RWF" /></Text>
           </View>
           <View>
               <Image style={tw`h-20 w-20 p-4`} source={image} />
