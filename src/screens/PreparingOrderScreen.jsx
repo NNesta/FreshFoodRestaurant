@@ -12,9 +12,9 @@ const PreparingOrderScreen = () => {
         }, 5000)
     })
   return (
-    <SafeAreaView style={tw`bg-[#00CCBB] flex-1 justify-center items-center`}>
+    <SafeAreaView className="bg-[#00CCBB] flex-1 justify-center items-center">
           <Text>Waiting for restaurant to accept your order</Text>
-          <Progress.Circle style={tw`text-white`} size={60} indeterminate={true} color="white" />
+          <Progress.Circle className="text-white" size={60} indeterminate={true} color="white" />
     </SafeAreaView>
   )
 }

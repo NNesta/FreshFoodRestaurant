@@ -26,47 +26,47 @@ const BasketScreen = () => {
         setBasketItems(Object.entries(groupedItems))
     }, [items]);
   return (
-      <SafeAreaView style={tw`flex-1 bg-white pt-6`}>
-          <View  style={tw`flex-1 bg-gray-100`}>
-              <View style={tw`p-5 border-b border-[#00CCBB] bg-white shadow-xl`}>
+      <SafeAreaView className="flex-1 bg-white pt-6">
+          <View  className="flex-1 bg-gray-100">
+              <View className="p-5 border-b border-[#00CCBB] bg-white shadow-xl">
                   <View>
-                      <Text style={tw`text-lg font-bold text-center`}>Basket</Text>
-                      <Text style={tw`text-gray-400 text-center`}>{ restaurant?.title }</Text>
+                      <Text className="text-lg font-bold text-center">Basket</Text>
+                      <Text className="text-gray-400 text-center">{ restaurant?.title }</Text>
                   </View>
                   <TouchableOpacity
                       onPress={navigation.goBack}
-                      style={tw`rounded-full bg-gray-100 absolute top-3 right-5`}
+                      className="rounded-full bg-gray-100 absolute top-3 right-5"
                   >
                       <XCircleIcon color="#00CCBB" size={50} />
                    
                   </TouchableOpacity>
               </View>
-              <View style={tw`flex-row items-center px-4 py-3 bg-white my-5`}>
+              <View className="flex-row items-center px-4 py-3 bg-white my-5">
                   <Image
                       source={require("../assets/food1.jpg")}
-                      style={tw`h-10 w-10 p-4 mr-4 rounded-full bg-gray-300`}
+                      className="h-10 w-10 p-4 mr-4 rounded-full bg-gray-300"
                   />
-                  <Text style={tw`flex-1`}>Deliver in 45-75 minutes</Text>
+                  <Text className="flex-1">Deliver in 45-75 minutes</Text>
                   <TouchableOpacity>
-                      <Text style={tw`text-[#00CCBB] text-lg`}>Change</Text>
+                      <Text className="text-[#00CCBB] text-lg">Change</Text>
                   </TouchableOpacity>
               </View>
-              <ScrollView style={tw`flex-col`}>
+              <ScrollView className="flex-col">
                   {BasketItems.map(([key, items]) => (                
-                      <View key={key} style={tw`flex-row items-center py-2 px-5 bg-white`}>
+                      <View key={key} className="flex-row items-center py-2 px-5 bg-white">
                       <View style={[tw`flex-row flex-1 items-center`, {gap:10}]}>
                           
                           <Text>{items.length} x  </Text>
                           <Image
-                              style={tw`h-12 w-12 rounded-full`}
+                              className="h-12 w-12 rounded-full"
                           source={items[0].image}
                           />
                               <Text> {items[0]?.name}</Text>
                           </View>
                           <View style={[tw`flex-row items-center`, { gap: 10 }]}>
-                              <Text style={tw`text-gray-600`}><Currency quantity={items[0].price} currency="GBP" /></Text>
+                              <Text className="text-gray-600"><Currency quantity={items[0].price} currency="GBP" /></Text>
                               
-                              <TouchableOpacity><Text onPress={()=> dispatch(removeItemFromBasket({id: key}))} style={tw`text-[#00CCBB]`}>  Remove</Text></TouchableOpacity>
+                              <TouchableOpacity><Text onPress={()=> dispatch(removeItemFromBasket({id: key}))} className="text-[#00CCBB]">  Remove</Text></TouchableOpacity>
                               
                           </View>
                       </View>
@@ -74,28 +74,28 @@ const BasketScreen = () => {
                   )}
               </ScrollView>
               <View style={[tw`bg-white p-5 mt-5`,{gap:10}]}>
-                  <View style={tw`flex-row justify-between items-center py-2`}>
-                      <Text style={tw`text-gray-400`}>SubTotal</Text>
-                      <Text style={tw`text-gray-400`}>
+                  <View className="flex-row justify-between items-center py-2">
+                      <Text className="text-gray-400">SubTotal</Text>
+                      <Text className="text-gray-400">
                           <Currency quantity={basketTotal} currency="GBP" />
                       </Text>
 
                   </View>
-                  <View style={tw`flex-row justify-between items-center py-2`}>
-                      <Text style={tw`text-gray-400`}>Delivery fees</Text>
-                      <Text style={tw`text-gray-400`}>
+                  <View className="flex-row justify-between items-center py-2">
+                      <Text className="text-gray-400">Delivery fees</Text>
+                      <Text className="text-gray-400">
                           <Currency quantity={5.99} currency="GBP" />
                       </Text>
 
                   </View>
-                  <View style={tw`flex-row justify-between items-center py-2`}>
-                      <Text style={tw`text-gray-900`}>Order Total</Text>
-                      <Text style={tw`font-extrabold`}>
+                  <View className="flex-row justify-between items-center py-2">
+                      <Text className="text-gray-900">Order Total</Text>
+                      <Text className="font-extrabold">
                           <Currency quantity={basketTotal + 5.99} currency="GBP" />
                       </Text>
                   </View>
-                      <TouchableOpacity onPress={()=>navigation.navigate("PreparingOrderScreen")} style={tw`p-4 rounded-lg bg-[#00CCBB] py-2`}>
-                          <Text style={tw`text-center text-white text-lg font-bold`}>
+                      <TouchableOpacity onPress={()=>navigation.navigate("PreparingOrderScreen")} className="p-4 rounded-lg bg-[#00CCBB] py-2">
+                          <Text className="text-center text-white text-lg font-bold">
                               Place Order
                           </Text>
                  </TouchableOpacity>

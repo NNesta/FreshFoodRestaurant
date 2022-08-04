@@ -7,15 +7,15 @@ import RestaurantCard from './RestaurantCard';
 
 const FeaturedRow = (props) => {
   return (
-    <View style={tw`mt-4 px-4`}>
-    <View style={tw`flex-row justify-between items-center `}>
+    <View className="mt-4 px-4">
+    <View className="flex-row justify-between items-center ">
       <Text>{props.title}</Text>
       <ArrowRightIcon color="#00CCBB" />
     </View>
-    <Text style={tw`text-xs text-gray-400`}>
+    <Text className="text-xs text-gray-400">
         {props.description}
       </Text>
-      <ScrollView style={tw`pt-4`}
+      <ScrollView className="pt-4"
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{

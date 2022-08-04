@@ -6,7 +6,7 @@ import CategoryCard from "./CategoryCard";
 
 const Category = () => {
   return (
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={tw`px-2 flex-row pt-2`}  >
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerclassName="px-2 flex-row pt-2"  >
          <CategoryCard title="Pizza" image={require("../assets/food8.jpg")} /> 
          <CategoryCard title="Hot Dogs" image={require("../assets/food7.jpg")} /> 
          <CategoryCard title="Humberger" image={require("../assets/food6.jpg")} /> 

@@ -11,10 +11,12 @@ import SignupScreen from './src/screens/SignupScreen';
 import { Provider } from "react-redux";
 import { store } from './src/store';
 import { TailwindProvider } from 'tailwindcss-react-native';
+import { UserAuthContextProvider } from "./src/context/UserAuthContext";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
   return (
+    <UserAuthContextProvider>
     <NavigationContainer>
       <Provider store={store}>
       <TailwindProvider>
@@ -39,6 +41,7 @@ export default function App() {
           </Stack.Navigator>
         </TailwindProvider>
       </Provider>
-    </NavigationContainer>
+      </NavigationContainer>
+    </UserAuthContextProvider>
   );
 }

@@ -15,12 +15,12 @@ const RestaurantCard = ({image, title, rating, genre, address, description, dish
       <TouchableOpacity
          onPress={handlePressRestaurant}
           style={[tw`shadow-lg py-2 px-2`, { gap: 4 }]}>
-          <Image style={tw`w-64 h-32 rounded`} source={image} />
+          <Image className="w-64 h-32 rounded" source={image} />
           <View style={[tw`px-4`]}>
               <Text style={[tw`text-xl font-bold text-black pl-2`]}>{ title }</Text>
           <View style={[tw.style(`flex-row`), {gap:7}] } >
-              <StarIcon style={tw`text-green-500`} color="#00CCBB" opacity={0.5} size={22} />
-              <Text style={tw`text-xs text-gray-500`}>{rating} . {genre}</Text>
+              <StarIcon className="text-green-500" color="#00CCBB" opacity={0.5} size={22} />
+              <Text className="text-xs text-gray-500">{rating} . {genre}</Text>
               
           </View>
           <View style={[tw`flex-row items-center`, {gap:10}]}>

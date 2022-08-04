@@ -8,10 +8,10 @@ import tw from 'twrnc'
 const CategoryCard = (props) => {
   
   return (
-    <TouchableOpacity style={tw`px-1`}>
-      <View style={tw`relative`}>
-          <Image style={tw`h-32 w-32`} source={props.image} />
-        <Text style={tw` absolute left-0 top-[60%] text-white font-bold text-xl`}>{props.title}</Text>
+    <TouchableOpacity className="px-1">
+      <View className="relative">
+          <Image className="h-32 w-32" source={props.image} />
+        <Text className=" absolute left-0 top-[60%] text-white font-bold text-xl">{props.title}</Text>
       </View>
     </TouchableOpacity>
   )

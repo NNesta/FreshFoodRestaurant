@@ -3,27 +3,31 @@ import React, { useState } from 'react';
 import tw from "twrnc";
 import { UserIcon, LockClosedIcon, EyeOffIcon, EyeIcon } from "react-native-heroicons/outline";
 import { useNavigation } from '@react-navigation/native';
+import { useUserAuth } from "../context/UserAuthContext";
 
 const SignupScreen = () => {
     const navigation = useNavigation(); 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [viewPassword, setViewPasword] = useState(false)
-    
+    const [viewPassword, setViewPasword] = useState(false);
+    const { signUp } = useUserAuth();
+    const handleSignUp = async () => {
+        await signUp(email, password);
+    }
   return (
-      <SafeAreaView style={tw`bg-white mt-5 pt-4 h-full w-full bg-[#00CCBB]`}>
-          <View style={tw`h-1/6`}>
-              <Text style={tw`text-2xl uppercase text-center text-white`}>
+      <SafeAreaView className="mt-5 pt-4 h-full w-full bg-[#00CCBB]">
+          <View className="h-1/6">
+              <Text className="text-2xl uppercase text-center text-white">
                   Create account
               </Text>
           </View>
-          <View style={tw`flex-row justify-center items-center h-5/6 w-full bg-white rounded-t-3xl`}>
+          <View className="flex-row justify-center items-center h-5/6 w-full bg-white rounded-t-3xl">
               <View style={[tw`w-full`]}>
               <View  style={[tw`mx-12`, {gap: 10}]}>
                   <Text>
                       First Name
                       </Text>
-                      <View style={tw`flex-row border-2 items-center h-8 w-full`}>
+                      <View className="flex-row border-2 items-center h-8 w-full">
                           <UserIcon size={20} color="black" />
                           <TextInput placeholder='e.g:John' style={[tw`flex-1 h-full `, {}]} onChangeText={(value)=>setEmail(value)} />
                           
@@ -34,7 +38,7 @@ const SignupScreen = () => {
                   <Text>
                       Last Name
                       </Text>
-                      <View style={tw`flex-row border-2 items-center h-8 w-full`}>
+                      <View className="flex-row border-2 items-center h-8 w-full">
                           <UserIcon size={20} color="black" />
                           <TextInput placeholder='e.g: Doe' style={[tw`flex-1 h-full `, {}]} onChangeText={(value)=>setEmail(value)} />
                           
@@ -45,7 +49,7 @@ const SignupScreen = () => {
                   <Text>
                       Email
                       </Text>
-                      <View style={tw`flex-row border-2 items-center h-8 w-full`}>
+                      <View className="flex-row border-2 items-center h-8 w-full">
                           <UserIcon size={20} color="black" />
                           <TextInput placeholder='e.g:johndoe@gmail.com' style={[tw`flex-1 h-full `, {}]} onChangeText={(value)=>setEmail(value)} />
                           
@@ -56,7 +60,7 @@ const SignupScreen = () => {
                   <Text>
                       Password
                       </Text>
-                      <View style={tw`flex-row border-2 items-center h-8 w-full`}>
+                      <View className="flex-row border-2 items-center h-8 w-full">
                           <LockClosedIcon size={20} color="black" />
                           <TextInput placeholder='e.g:jsdfg43rr$$5' style={[tw`flex-1 h-full`, {}]} className="focus:" onChangeText={(value)=>setPassword(value)} secureTextEntry={!viewPassword} />
                           {!viewPassword ? <TouchableOpacity onPress={() => setViewPasword(!viewPassword)} ><EyeOffIcon size={20}/></TouchableOpacity> :
@@ -65,16 +69,16 @@ const SignupScreen = () => {
                       </View>
               
                   </View>
-                  <TouchableOpacity style={tw`mx-16`} onPress={()=>console.log("Signup")} >
-                  <View style={tw`bg-[#00CCBB] my-4`}>
-                      <Text style={tw`px-16 py-2 text-center text-white font-bold text-xl`}>
+                  <TouchableOpacity className="mx-16" onPress={handleSignUp} >
+                  <View className="bg-[#00CCBB] my-4">
+                      <Text className="px-16 py-2 text-center text-white font-bold text-xl">
                           Signup
                       </Text>
                   </View>
               </TouchableOpacity>
-                  <TouchableOpacity style={tw`mx-16`} onPress={()=>navigation.navigate("LoginScreen")}>
-                  <View style={tw`bg-white border-2 border-tr-[#00CCBB] my-4`}>
-                      <Text style={tw`px-16 py-2 text-center text-[#00CCBB] font-bold text-xl`}>
+                  <TouchableOpacity className="mx-16" onPress={()=>navigation.navigate("LoginScreen")}>
+                  <View className="bg-white border-2 border-tr-[#00CCBB] my-4">
+                      <Text className="px-16 py-2 text-center text-[#00CCBB] font-bold text-xl">
                           Login
                       </Text>
                   </View>

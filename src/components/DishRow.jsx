@@ -16,25 +16,25 @@ const DishRow = ({id, name, description, image, price }) => {
     }
     return (
       <>
-      <TouchableOpacity onPress= {()=>setIsPressed(!isPressed)} style={tw`bg-white p-4 flex-row`}>
-          <View style={tw`flex-1 pr-2`}>
-              <Text style={tw`text-lg mb-1`}>{ name }</Text>
-              <Text style={tw`text-gray-400`}>{description}</Text>
+      <TouchableOpacity onPress= {()=>setIsPressed(!isPressed)} className="bg-white p-4 flex-row">
+          <View className="flex-1 pr-2">
+              <Text className="text-lg mb-1">{ name }</Text>
+              <Text className="text-gray-400">{description}</Text>
               <Text><Currency quantity={price} currency="RWF" /></Text>
           </View>
           <View>
-              <Image style={tw`h-20 w-20 p-4`} source={image} />
+              <Image className="h-20 w-20 p-4" source={image} />
           </View>
             </TouchableOpacity>
             {
                 isPressed && (
                     <View style={[tw`bg-white px-4 flex-row items-center pb-3`, {gap: 2}]}>
                         <TouchableOpacity onPress={removeItem}>
-                            <MinusCircleIcon style={tw`text-blue-500`} size={40} />
+                            <MinusCircleIcon className="text-blue-500" size={40} />
                         </TouchableOpacity>
-                        <Text style={tw`text-xl`}>{items.length}</Text>
+                        <Text className="text-xl">{items.length}</Text>
                         <TouchableOpacity onPress={() => dispatch(addItemToBasket({id, name, description, image, price }))}>
-                            <PlusCircleIcon style={tw`text-blue-500`} size={40} />
+                            <PlusCircleIcon className="text-blue-500" size={40} />
                      </TouchableOpacity>
                     </View>
                 
