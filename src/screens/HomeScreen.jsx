@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, Image, TextInput, ScrollView } from 'react-native'
+import { View, Text, SafeAreaView, Image, TextInput, ScrollView, TouchableOpacity } from 'react-native'
 import React, { useLayoutEffect } from 'react'
 import tw from "twrnc"
 import { useNavigation } from '@react-navigation/native'
@@ -27,7 +27,9 @@ const HomeScreen = () => {
               <ChevronDownIcon style={tw`w-7 h-7 mt-1`} color="#00CCBB" />
             </View>
         </View>
-        <UserIcon size={40} color="#00CCBB" />
+        <TouchableOpacity onPress={()=>navigation.navigate("SignupScreen")}>
+          <UserIcon size={40} color="#00CCBB" />
+        </TouchableOpacity>
       </View> 
       <View style={tw`flex-row items-center p-2`}>
         <View style={tw`flex-1 rounded-xl flex-row h-12 bg-gray-300 focus:bg-red-500 items-center`}>

@@ -10,11 +10,11 @@ const Category = () => {
          <CategoryCard title="Pizza" image={require("../assets/food8.jpg")} /> 
          <CategoryCard title="Hot Dogs" image={require("../assets/food7.jpg")} /> 
          <CategoryCard title="Humberger" image={require("../assets/food6.jpg")} /> 
-         <CategoryCard title="Humberger" image={require("../assets/food5.jpg")} /> 
-         <CategoryCard title="Humberger" image={require("../assets/food4.jpg")} /> 
-         <CategoryCard title="Humberger" image={require("../assets/food3.jpg")} /> 
-         <CategoryCard title="Humberger" image={require("../assets/food2.jpg")} /> 
-         <CategoryCard title="Humberger" image={require("../assets/food1.jpg")} /> 
+         <CategoryCard title="Chicken" image={require("../assets/food5.jpg")} /> 
+         <CategoryCard title="Beef" image={require("../assets/food4.jpg")} /> 
+         <CategoryCard title="Bread" image={require("../assets/food3.jpg")} /> 
+         <CategoryCard title="Hot Sauce" image={require("../assets/food2.jpg")} /> 
+         <CategoryCard title="Pork" image={require("../assets/food1.jpg")} /> 
  
     </ScrollView>
   )
